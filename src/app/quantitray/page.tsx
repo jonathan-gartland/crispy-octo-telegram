@@ -22,9 +22,9 @@ export default function Mpn() {
     }
 
     return (
-      <div className="grid grid-cols-2 gap-6 mb-6 w-24 text-red-600 text-xl">
+      <div className="grid grid-cols-2 gap-6 mb-6 w-24 text-red-600">
         <div>MPN:</div>
-        <div className="text-red-600 font-bold text-xl">{mpnList[1]}</div>
+        <div className="text-red-600 font-bold">{mpnList[1]}</div>
       </div>
     );
   }
@@ -46,11 +46,11 @@ export default function Mpn() {
 
   return (
     <div className={`${lusitana.className} w-64 px-2`}>
-      <h1 className="mb-4 text-lg md:text-lg text-blue-600">
-        QuantiTray&reg; MPN
+      <h1 className="mb-4 text-md md:text-md text-blue-600">
+        QuantiTray&reg;
       </h1>
       <div className="grid grid-cols-1 gap-4 mb-6 ">
-        <div className="text-lg">
+        <div>
           Positive Wells:&nbsp;
           <input
             className="rounded-md w-12 px-1"

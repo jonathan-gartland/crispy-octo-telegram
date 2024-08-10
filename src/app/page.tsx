@@ -9,7 +9,7 @@ export default async function Page() {
         <div>
           <br />
           <div className="w-full flex-start md:w-64">
-            <h1 className={`text-xl md:text-2xl text-blue-600 flex justify-center`}>MPN Lookup</h1>
+            <h1 className={`text-lg md:text-lg text-blue-600 flex justify-center`}>MPN Lookup</h1>
             <br/>
             <p className="text-md">
               A simple app written so a user can look up the relevant Most Probable Number for the Idexx water
