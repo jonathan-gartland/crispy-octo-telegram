@@ -2,30 +2,23 @@
 
 import React from "react";
 import { lusitana } from "@/app/ui/fonts";
+import Link from 'next/link';
 
 export default function AboutForm() {
   return (
     <>
-      <h1
-        className={`${lusitana.className} mb-4 text-xl md:text-2xl text-blue-600`}
-      >
-        About
-      </h1>
       <div
         id="aboutdiv"
-        style={{
-          border: "solid",
-          marginRight: "5px",
-          paddingRight: "15px",
-          paddingBottom: "15px",
-        }}
-        className={`${lusitana.className} text-lg w-1/2 bg-amber-50`}
+        className={`${lusitana.className} text-md bg-amber-50  w-64 px-2`}
       >
-        <br />
-        <br />
+        <br/>
+        <h1
+          className={`mb-4 text-xl md:text-2xl flex justify-center`}
+        >
+          About
+        </h1>
         <div
-          className=" "
-          style={{ textAlign: "left", paddingLeft: "15px" }}
+          className="text-md"
           data-testid={"about-text-id"}
         >
           <p>
@@ -52,7 +45,7 @@ export default function AboutForm() {
             </a>
             , which is the largest PDF table.
           </p>
-          <br />
+          <br/>
           <p>
             Allegedly created to be helpful in the tedious process of looking up
             the MPN related to positive flourescing cells in an incubated
@@ -66,7 +59,7 @@ export default function AboutForm() {
             </a>
             &nbsp;was created.
           </p>
-          <br />
+          <br/>
           <p>
             If the story is being recalled correctly, this desktop solution was
             written so one of the software engineers could practice building a
@@ -77,7 +70,7 @@ export default function AboutForm() {
               desktop application today.
             </i>
           </p>
-          <br />
+          <br/>
           <p>
             While the previous detail may cause the reader to ask some questions
             related to why the above is the current state of affairs, your
@@ -104,7 +97,7 @@ export default function AboutForm() {
             there who use it - have fun, it will always be freely available on
             github.
           </p>
-          <br />
+          <br/>
           <p>
             This particular NextJS app is simply a demo using the library to
             show how it could be implemented in a web app. I wanted more
@@ -115,6 +108,9 @@ export default function AboutForm() {
             NextJS framework.
           </p>
         </div>
+      </div>
+      <div className="flex justify-center w-64 text-blue-600">
+        <Link key={"Home"} href={"/"}>Home</Link>
       </div>
     </>
   );

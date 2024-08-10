@@ -1,8 +1,9 @@
 "use client";
 
 import { getQtMpn } from "mpn-lookup/mpn.lookup";
-import { useState } from "react";
+import React, { useState } from "react";
 import { lusitana } from "@/app/ui/fonts";
+import Link from 'next/link';
 
 export default function Mpn() {
   const [inCount, setInCount] = useState(0);
@@ -44,14 +45,13 @@ export default function Mpn() {
   }
 
   return (
-    <div className={`${lusitana.className} w-1/2`}>
-      <h1 className="mb-4 text-xl md:text-2xl text-blue-600">
+    <div className={`${lusitana.className} w-64 px-2`}>
+      <h1 className="mb-4 text-lg md:text-lg text-blue-600">
         QuantiTray&reg; MPN
       </h1>
-      <br />
-      <div className="grid grid-cols-2 gap-4 mb-6 ">
-        <div className="text-xl">
-          Enter Positive Well Count:&emsp;
+      <div className="grid grid-cols-1 gap-4 mb-6 ">
+        <div className="text-lg">
+          Positive Wells:&nbsp;
           <input
             className="rounded-md w-12 px-1"
             name={"QTinput"}
@@ -64,11 +64,14 @@ export default function Mpn() {
             data-testid={"qt-input-dataid"}
           />
         </div>
-        {<div>{mpn(inCount)}</div>}
-        <div className="text-xl">
+        {<div className="text-md flex justify-left px-10">{mpn(inCount)}</div>}
+        <div className="text-md">
           <label data-testid={"qt-conf-label"}>95% Confidence Range</label>
         </div>
-        {<div className="text-lg">{mpn95conf(inCount)}</div>}
+        {<div className="text-md flex justify-left px-10">{mpn95conf(inCount)}</div>}
+      </div>
+      <div className="flex justify-left px-10 w-64 text-blue-600">
+        <Link key={"Home"} href={"/"}>Home</Link>
       </div>
     </div>
   );

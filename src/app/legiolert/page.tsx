@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { getQtLegio } from "mpn-lookup/mpn.lookup";
 import { lusitana } from "@/app/ui/fonts";
+import Link from 'next/link';
 
 export default function QT2KForm() {
   const [inLarge, setInLarge] = useState(0);
@@ -19,22 +20,22 @@ export default function QT2KForm() {
     }
 
     return (
-      <div className="text-red-600 font-bold text-xl">
+      <div className="text-red-600 font-bold text-lg">
         MPN:&emsp;&emsp;{mpnLList}
       </div>
     );
   }
 
   return (
-    <div className={`${lusitana.className} w-1/2`}>
-      <h1 className="mb-4 text-xl md:text-2xl text-blue-600">
-        QuantiTray&reg; Legiolert MPN
-      </h1>
+    <div className={`${lusitana.className} w-64 px-2`}>
       <br />
-      <div className="grid grid-cols-2 gap-4 mb-6">
+      <h1 className="mb-4 text-lg md:text-lg text-blue-600">
+        QuantiTray&reg;<br />Legiolert MPN
+      </h1>
+      <div className="grid grid-cols-1 gap-4 mb-6">
         <div>
-          <div className="text-xl">
-            Enter Large Well Count:&emsp;
+          <div className="text-md">
+            Large Positive Wells:&emsp;
             <input
               className="rounded-md w-12 px-1"
               value={inLarge}
@@ -42,11 +43,12 @@ export default function QT2KForm() {
               type="number"
               min="0"
               max="6"
-              style={{ marginLeft: "10px" }}
+              style={{ marginLeft: "26px" }}
               width={"34px"}
             />
           </div>
-          <div className="text-xl">
+          <br />
+          <div className="text-md">
             Enter Small Well Count:&emsp;
             <input
               className="rounded-md w-12 px-1"
@@ -55,12 +57,14 @@ export default function QT2KForm() {
               type="number"
               min="0"
               max="90"
-              style={{ marginLeft: "10px" }}
             />
           </div>
         </div>
+        <div className="text-md flex justify-left px-10">{mpnL(inSmall, inLarge)}</div>
       </div>
-      {<div>{mpnL(inSmall, inLarge)}</div>}
+      <div className="flex justify-left px-10 w-64 text-blue-600">
+        <Link key={"Home"} href={"/"}>Home</Link>
+      </div>
     </div>
   );
 }

@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { getQt2KMpn } from "mpn-lookup/mpn.lookup";
 import { lusitana } from "@/app/ui/fonts";
+import Link from 'next/link';
 
 export default function QTLForm() {
   const [in2KL, setIn2KL] = useState(0);
@@ -15,7 +16,7 @@ export default function QTLForm() {
     }
 
     return (
-      <div className="grid grid-cols-2 gap-6 mb-6 w-24 text-red-600 text-xl">
+      <div className="grid grid-cols-2 gap-6 w-24 text-red-600 text-xl">
         <div>MPN:</div>
         <div className="text-red-600 font-bold text-xl">{mpn2KList[1]}</div>
       </div>
@@ -29,7 +30,7 @@ export default function QTLForm() {
     }
 
     return (
-      <div className="grid grid-cols-2 gap-4 mb-6 w-24">
+      <div className="grid grid-cols-2 gap-2 w-24">
         <div>High: </div>
         <div>{mpn2KList[2]}</div>
         <div>Low:</div>
@@ -39,15 +40,15 @@ export default function QTLForm() {
   }
 
   return (
-    <div className={`${lusitana.className} w-1/2`}>
-      <h1 className="mb-4 text-xl md:text-2xl text-blue-600">
+    <div className={`${lusitana.className} w-64 px-2`}>
+      <h1 className="mb-4 text-lg md:text-lg text-blue-600">
         QuantiTray2000&reg; MPN
       </h1>
       <br />
-      <div className="grid grid-cols-2 gap-4 mb-6 ">
-        <div className={"text-xl"}>
-          <div>
-            Enter Large Well Count:&emsp;
+      <div className="grid grid-cols-1 gap-4 mb-6 ">
+        <div>
+          <div className="text-md">
+            Large Positive Wells:&emsp;
             <input
               className="rounded-md w-12 px-1"
               name={"QT2KLinput"}
@@ -60,7 +61,7 @@ export default function QTLForm() {
             />
           </div>
           <div>
-            Enter Small Well Count:&emsp;
+            Small Positive Wells:&emsp;
             <input
               className="rounded-md w-12 px-1"
               name={"QT2KSinput"}
@@ -73,11 +74,14 @@ export default function QTLForm() {
             />
           </div>
         </div>
-        <div>{mpn2K(in2KL, in2KS)}</div>
-        <div className="text-xl">
+        <div className="text-md flex justify-left px-10">{mpn2K(in2KL, in2KS)}</div>
+        <div className="text-md">
           <label data-testid={"qt-conf-label"}>95% Confidence Range</label>
         </div>
-        {<div className="text-lg">{mpn2K95conf(in2KL, in2KS)}</div>}
+        {<div className="text-md flex justify-left px-10">{mpn2K95conf(in2KL, in2KS)}</div>}
+      </div>
+      <div className="flex justify-left px-10 w-64 text-blue-600">
+        <Link key={"Home"} href={"/"}>Home</Link>
       </div>
     </div>
   );
