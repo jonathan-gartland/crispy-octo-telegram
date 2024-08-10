@@ -5,11 +5,9 @@ import { usePathname } from "next/navigation";
 import clsx from "clsx";
 
 const links = [
-  // { name: "Home", href: "/" },
   { name: "QuantiTray® MPN", href: "/quantitray" },
   { name: "QuantiTray2000®", href: "/quantitray2000" },
   { name: "Legiolert", href: "/legiolert" },
-  // { name: "About", href: "/about" },
 ];
 
 export default function NavLinks() {
@@ -32,6 +30,6 @@ export default function NavLinks() {
           </Link>
         );
       })}
-         </>
+    </>
   );
 }
