@@ -42,7 +42,7 @@ export default function QTLForm() {
   return (
     <div className={`${lusitana.className} w-64 px-2`}>
       <h1 className="mb-4 text-lg md:text-lg text-blue-600">
-        QuantiTray2000&reg; MPN
+        QuantiTray2000&reg;
       </h1>
       <br />
       <div className="grid grid-cols-1 gap-4 mb-6 ">
